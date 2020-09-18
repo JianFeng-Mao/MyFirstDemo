@@ -1,5 +1,5 @@
 /**
- *  属性： width height left top xSpeed ySpeed dom
+ * 属性：width height left top xSpeed ySpeed dom
  *
  * @class Rectangle
  */
@@ -15,22 +15,24 @@ class Rectangle {
         this.render();
     }
 
-    render() {
-        this.dom.style.left = this.left + "px";
-        this.dom.style.top = this.top + "px";
+    render(){
         this.dom.style.width = this.width + "px";
         this.dom.style.height = this.height + "px";
+        this.dom.style.left = this.left + "px";
+        this.dom.style.top = this.top + "px";
     }
-    move(duration) {
-        let xDic = this.xSpeed * duration;
-        let yDic = this.ySpeed * duration;
-        this.left += xDic;
-        this.top += yDic;
 
-        if (this.onMove) {
+    move(duration){
+        const xDis = this.xSpeed * duration;
+        const yDis = this.ySpeed * duration;
+        this.left += xDis;
+        this.top += yDis;
+
+        if(this.onMove){
             this.onMove();
         }
 
         this.render();
     }
 }
+
